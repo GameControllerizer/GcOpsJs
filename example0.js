@@ -27,23 +27,23 @@ serialPort.on('open', function(err) {
     console.log('[*] SerialPort opened');
 });
 serialPort.on('data', function(input) {
-	const button_id = input.readUInt8(0);
-	var button_name;	
+    const button_id = input.readUInt8(0);
+    var button_name;    
     switch(button_id){
-		case 0x01:
-			button_name = "B0";
-			break;
+        case 0x01:
+            button_name = "B0";
+            break;
         case 0x02:
-			button_name = "B1";
-			break;
-		case 0x04:
-			button_name = "B2";
-			break;
-		case 0x08:
-			button_name = "B3";
-			break;
-	}
-	console.log("[*] Tact switch is pressed :", button_name);
+            button_name = "B1";
+            break;
+        case 0x04:
+            button_name = "B2";
+            break;
+        case 0x08:
+            button_name = "B3";
+            break;
+    }
+    console.log("[*] Tact switch is pressed :", button_name);
 });
 
 // define 'Hadouken' command
